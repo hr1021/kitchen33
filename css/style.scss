@@ -1,0 +1,527 @@
+// 設定
+$main-color: #292320;
+$accent-color: #ffffff;
+$base-color: #faf6ed;
+$font-color: rgba(255, 255, 255, .95);
+
+@mixin row() {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@mixin text-h2() {
+  font-size: 48px;
+  line-height: 1.5;
+  letter-spacing: 8px;
+}
+
+@mixin section-p {
+  margin-top: 60px;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+
+// --------------------------------
+// 全体構造
+// --------------------------------
+body {
+  color: #343434;
+  font-size: 20px;
+  font-family: 'Shippori Mincho', "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  background-color: $base-color;
+}
+
+p {
+  font-weight: 500;
+}
+
+// --------------------------------
+// ヘッダー
+// --------------------------------
+header {
+  background-color: #292320E6;
+  position: fixed;
+  z-index: 100;
+  top: 50px;
+  width: 100%;
+
+  .inner-header {
+    margin: 10px auto 10px auto;
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+  }
+
+  nav {
+    display: flex;
+  }
+
+  ul {
+    color: $accent-color;
+    display: flex;
+  }
+
+  ul.right {
+    margin-left: 45px;
+    border-left: 1px solid $accent-color;
+  }
+
+  li {
+    margin-left: 45px;
+  }
+
+  li a:hover {
+    border-bottom: 1px solid $accent-color;
+  }
+}
+
+// --------------------------------
+// メイン
+// --------------------------------
+#home main {
+  overflow: hidden;
+
+  .wrapper {
+    position: relative;
+    z-index: -1;
+    text-align: center;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+  }
+
+  .wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .bx-wrapper {
+    box-shadow: none;
+    border: none;
+    left: 0;
+    background-color: transparent;
+    margin: 0 auto;
+  }
+
+  h1 {
+    writing-mode: vertical-rl;
+    color: $font-color;
+    font-size: 2.8vw;
+    letter-spacing: 10px;
+    line-height: 1.8;
+    text-align: left;
+    position: absolute;
+    top: 25%;
+    left: 23%;
+    text-shadow: #000 0 0 15px;
+  }
+
+  h1 span {
+    -webkit-text-combine: horizontal;
+  }
+
+}
+
+.container {
+  // width: 1280px;
+  // margin: 0 auto;
+
+  .wrapper-bg01 {
+    margin-top: -1320px;
+
+    img {
+      width: 1180px;
+      height: 1180px;
+      position: relative;
+      z-index: -2;
+    }
+  }
+}
+
+// --------------------------------
+// トップページ
+// --------------------------------
+section .inner {
+  @include row();
+  width: 1280px;
+
+  p {
+    margin-top: 60px;
+    letter-spacing: 3px;
+    line-height: 1.5;
+
+    a {
+      display: inline-block;
+      padding: 5px;
+      border-bottom: 1px solid #343434;
+    }
+  }
+
+}
+
+section.about {
+  background-color: #F5EDDC;
+  width: 60%;
+  height: 1180px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 300px;
+
+  .inner {
+    width: 1280px;
+    margin-top: 200px;
+    margin-right: -450px;
+  }
+
+  .left img {
+    max-width: 100%;
+    margin-top: 250px;
+  }
+
+  .right {
+    width: 45%;
+
+    p {
+      margin-top: 60px;
+      letter-spacing: 3px;
+      line-height: 1.5;
+    }
+  }
+
+  .right h2 {
+    @include text-h2();
+    margin-top: 150px;
+  }
+}
+
+section.dish {
+  margin-top: 550px;
+  margin-left: 40%;
+  height: 1070px;
+  background-color: #F5EDDC;
+
+  .inner {
+    width: 1280px;
+    margin-left: -450px;
+  }
+
+  .left {
+    width: 70%;
+  }
+
+  .left h2 {
+    @include text-h2();
+    letter-spacing: 5px;
+  }
+
+  .left p.more {
+    text-align: right;
+  }
+
+  .left img {
+    margin-top: 210px;
+    margin-left: 160px;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .right img:last-child {
+    margin-top: 250px;
+    margin-right: 20px;
+  }
+}
+
+section.info {
+  width: 1280px;
+  margin: 450px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  .right h2 {
+    @include text-h2();
+  }
+
+  .right p {
+    margin-top: 60px;
+    width: 460px;
+    letter-spacing: 3px;
+    line-height: 1.5;
+  }
+
+  .right p.more {
+    text-align: right;
+  }
+
+  .right a {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #343434;
+  }
+}
+
+.reserve {
+  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  address p:first-child {
+    font-size: 32px;
+  }
+
+  address p.tel {
+    font-size: 82px;
+    line-height: 1.5;
+    letter-spacing: 10px;
+    border-bottom: 10px double #E6DDC3;
+
+  }
+
+  address p:last-child {
+    margin-top: 30px;
+  }
+}
+
+// --------------------------------
+// フッター
+// --------------------------------
+footer {
+  width: 100%;
+  margin-top: 210px;
+  height: 540px;
+  color: $font-color;
+  background-color: $main-color;
+  overflow: hidden;
+
+  .wrapper {
+    @include row();
+    width: 1180px;
+    margin: 30px auto 0 auto;
+  }
+
+  nav {
+    margin-top: 50px;
+    font-size: 26px;
+
+    li {
+      margin-bottom: 35px;
+    }
+  }
+
+  .right {
+    margin-top: 45px;
+  }
+
+  .right p.tel {
+    font-size: 24px;
+    color: #635D55;
+
+    i {
+      margin-left: 10px;
+    }
+  }
+
+  .right p:nth-child(2) {
+    font-size: 34px;
+    letter-spacing: 5px;
+    margin-top: 15px;
+  }
+
+  .right p.location {
+    font-size: 24px;
+    color: #635D55;
+    margin-top: 60px;
+
+    i {
+      margin-left: 10px;
+    }
+  }
+
+  .right p:nth-child(4) {
+    margin-top: 15px;
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+
+  .right p:nth-child(5) {
+    font-size: 34px;
+    margin-top: 10px;
+    letter-spacing: 5px;
+  }
+
+  p.copy {
+    margin-top: 113px;
+    text-align: center;
+  }
+}
+
+// --------------------------------
+// お料理
+// --------------------------------
+#dish main {
+
+  .wrapper {
+    max-width: 1000px;
+    margin: 260px auto 200px auto;
+    position: relative;
+
+    h1 {
+      writing-mode: vertical-rl;
+      font-size: 90px;
+      position: absolute;
+      top: -50px;
+      right: -30px;
+    }
+  }
+
+  .bg {
+    background-color: #F5EDDC;
+    width: 100vw;
+    padding: 120px 0;
+  }
+
+  section.season {
+    @include row();
+    width: 1280px;
+    margin: 0 auto;
+
+    h2 {
+      @include text-h2();
+    }
+
+    p {
+      @include section-p();
+      width: 500px;
+    }
+  }
+
+  section.alcohol {
+    width: 1280px;
+    margin: 250px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+
+    .right {
+      h2 {
+        @include text-h2();
+      }
+
+      p {
+        @include section-p();
+        width: 480px;
+      }
+    }
+  }
+
+  section.menu {
+    width: 1280px;
+    margin: 200px auto 0 auto;
+    display: block;
+
+    h2 {
+      @include text-h2();
+      text-align: center;
+      margin-bottom: 90px;
+    }
+
+    .menu-images {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    figure {
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 3px;
+      margin-bottom: 70px;
+    }
+
+    figcaption {
+      margin-top: 20px;
+    }
+
+    p {
+      width: 380px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p span {
+      line-height: 1.5;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+
+  }
+}
+
+// --------------------------------
+// 店舗情報
+// --------------------------------
+
+#info main {
+  width: 1280px;
+  margin: 0 auto;
+
+  .wrapper {
+    max-width: 1000px;
+    margin: 260px auto 200px auto;
+    position: relative;
+
+    h1 {
+      writing-mode: vertical-rl;
+      font-size: 90px;
+      position: absolute;
+      top: -40px;
+      right: -30px;
+    }
+  }
+
+  section.information {
+    display: block;
+
+    h2 {
+      font-size: 48px;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+
+    table {
+      width: 780px;
+      margin: 50px auto 0 auto;
+      letter-spacing: .1em;
+      line-height: 1.6;
+    }
+
+    tr {
+      border-collapse: collapse;
+      border-top: 2px dotted #F5EDDC;
+      border-bottom: 2px dotted #F5EDDC;
+    }
+
+    th {
+      padding: 20px;
+      border-collapse: collapse;
+      border-right: 2px dotted #F5EDDC;
+    }
+
+    td {
+      padding: 20px;
+    }
+  }
+
+  .map {
+    margin-top: 250px;
+    text-align: center;
+  }
+}
